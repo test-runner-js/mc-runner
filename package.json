@@ -1,0 +1,23 @@
+{
+  "name": "multi-core-runner",
+  "author": "Lloyd Brookes <75pound@gmail.com>",
+  "version": "0.0.0",
+  "description": "multi-core-runner",
+  "repository": "https://github.com/75lb/multi-core-runner",
+  "keywords": [],
+  "license": "MIT",
+  "bin": {
+    "mc-runner": "bin/cli.js"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "test": "test-runner test/*.js"
+  },
+  "dependencies": {
+    "test-object-model": "file:../test-object-model",
+    "test-runner": "file:../core",
+    "test-runner-cli": "file:../cli"
+  }
+}
