@@ -1,6 +1,6 @@
 process.once('message', run)
 
-function getTom (files) {
+function getTom (files, cpuIndex) {
   const path = require('path')
   const toms = files.map(file => {
     const tom = require(path.resolve(process.cwd(), file))
@@ -10,14 +10,18 @@ function getTom (files) {
       throw new Error('No TOM exported: ' + file)
     }
   })
-  const name = 'portion'
+  const name = 'CPU ' + cpuIndex
   const Tom = require('test-object-model')
   return Tom.combine(toms, name)
 }
 
-function run (files) {
-  const tom = getTom(files)
-  const TestRunner = require('test-runner')
-  const runner = new TestRunner({ tom })
-  runner.start()
+function run (data) {
+  const tom = getTom(data.files, data.cpuIndex)
+  if (data.options.tree) {
+    console.log(tom.tree())
+  } else {
+    const TestRunner = require('test-runner')
+    const runner = new TestRunner({ tom })
+    runner.start()
+  }
 }
