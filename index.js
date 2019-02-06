@@ -1,7 +1,6 @@
-const CliApp = require('test-runner-cli')
 const TestRunner = require('test-runner')
 
-class MultiCoreCliApp extends CliApp {
+class MultiCoreTestRunner extends TestRunner {
   processFiles (files, options) {
     const fork = require('child_process').fork
     const cpus = require('os').cpus().length
@@ -17,4 +16,4 @@ class MultiCoreCliApp extends CliApp {
   }
 }
 
-module.exports = MultiCoreCliApp
+module.exports = MultiCoreTestRunner

@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-const CliApp = require('../')
-const cli = new CliApp()
+const McRunnerCli = require('../')
+const cli = new McRunnerCli({ tap: true })
 cli.start()

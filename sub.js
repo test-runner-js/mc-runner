@@ -20,8 +20,8 @@ function run (data) {
   if (data.options.tree) {
     console.log(tom.tree())
   } else {
-    const TestRunner = require('test-runner')
-    const runner = new TestRunner({ tom })
+    const TestRunner = require('test-runner-core')
+    const runner = new TestRunner({ tom, view: require('test-runner/lib/view-tap') })
     runner.start()
   }
 }

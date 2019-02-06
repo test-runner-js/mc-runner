@@ -16,8 +16,8 @@
     "test": "test-runner test/*.js"
   },
   "dependencies": {
-    "test-object-model": "file:../test-object-model",
-    "test-runner": "file:../core",
-    "test-runner-cli": "file:../cli"
+    "test-object-model": "^0.3.5",
+    "test-runner": "^0.6.0-8",
+    "test-runner-core": "^0.6.0-9"
   }
 }
