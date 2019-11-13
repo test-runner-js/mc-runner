@@ -21,7 +21,7 @@ function run (data) {
     console.log(tom.tree())
   } else {
     const TestRunner = require('test-runner-core')
-    const runner = new TestRunner({ tom, view: require('test-runner/lib/view-tap') })
+    const runner = new TestRunner(tom)
     runner.start()
   }
 }
